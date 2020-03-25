@@ -22,7 +22,7 @@ const createWindow = (): void => {
     windows = []
   })
 
-  ipcMain.on('message-from-worker', () => {
+  ipcMain.on('open', () => {
     if (windows.length === 0) {
       const allScreens = screen.getAllDisplays();
       const primary = screen.getPrimaryDisplay();
@@ -39,8 +39,6 @@ const createWindow = (): void => {
           })
 
           mainWindow.removeMenu()
-
-          mainWindow.webContents.openDevTools()
 
           mainWindow.loadFile(path.join(__dirname, '..', 'src', 'index.html'));
 
