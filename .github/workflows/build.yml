@@ -23,4 +23,4 @@ jobs:
           node-version: '10.x'
       - run: npm install
       - run: npm test
-      - run: npm run make ;
+      - run: npm run make
