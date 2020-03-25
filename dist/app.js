@@ -47,6 +47,7 @@ var createWindow = function () {
                     secondWindow.loadFile(path.join(__dirname, '..', 'src', 'second.html'));
                     secondWindow.removeMenu();
                     secondWindow.setFullScreen(true);
+                    secondWindow.focus();
                     windows.push(secondWindow);
                 }
             });
