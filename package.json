@@ -25,9 +25,16 @@
         "name": "@electron-forge/maker-squirrel",
         "config": {
           "name": "pushup_reminder",
-          "authors": "Mark Witt"
+          "authors": "Mark Witt",
+          "iconUrl" : "https://raw.githubusercontent.com/teknoalex/pushup-reminder/master/icon/icon.ico"
         }
-      }]
+      },{
+        "name": "@electron-forge/maker-dmg",
+        "config": {
+          "name" :"Pushup Reminder"
+        }
+      }
+    ]
     }
   },
   "devDependencies": {

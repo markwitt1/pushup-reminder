@@ -43,6 +43,7 @@ const createWindow = (): void => {
           mainWindow.loadFile(path.join(__dirname, '..', 'src', 'index.html'));
 
           mainWindow.setFullScreen(true)
+          mainWindow.focus();
 
           windows.push(mainWindow)
         } else {

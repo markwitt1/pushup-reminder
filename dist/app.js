@@ -19,7 +19,7 @@ var createWindow = function () {
         });
         windows = [];
     });
-    electron_1.ipcMain.on('message-from-worker', function () {
+    electron_1.ipcMain.on('open', function () {
         if (windows.length === 0) {
             var allScreens = electron_1.screen.getAllDisplays();
             var primary_1 = electron_1.screen.getPrimaryDisplay();
@@ -34,9 +34,9 @@ var createWindow = function () {
                         }
                     });
                     mainWindow.removeMenu();
-                    mainWindow.webContents.openDevTools();
                     mainWindow.loadFile(path.join(__dirname, '..', 'src', 'index.html'));
                     mainWindow.setFullScreen(true);
+                    mainWindow.focus();
                     windows.push(mainWindow);
                 }
                 else {
