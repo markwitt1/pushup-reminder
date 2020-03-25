@@ -5,4 +5,5 @@ const getDirectories = source =>
         .filter(dirent => dirent.isDirectory())
         .map(dirent => dirent.name)
 
-console.log(getDirectories(__dirname));        
+console.log(getDirectories(__dirname));
+console.log(__dirname)     
