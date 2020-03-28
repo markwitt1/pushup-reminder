@@ -1,7 +1,7 @@
 {
   "name": "pushup-reminder",
   "productName": "pushup-reminder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reminds you to do 10 pushups every 20 minutes",
   "main": "dist/app.js",
   "scripts": {
