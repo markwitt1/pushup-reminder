@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Do Pushups</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/index.css" />
   </head>
   <body>
-    <h1> Do 10 Pushups now</h1>
+    <h1>Do 10 Pushups now</h1>
     <button id="finishbtn" disabled>Finish</button>
-    <script>var exports = {}</script>
+
+    <div class="onoffswitch">
+      <input
+        type="checkbox"
+        name="onoffswitch"
+        class="onoffswitch-checkbox"
+        id="myonoffswitch"
+        checked
+      />
+      <label class="onoffswitch-label" for="myonoffswitch"></label>
+    </div>
+    <script>
+      var exports = {};
+    </script>
     <script src="../dist/renderer.js"></script>
   </body>
 </html>

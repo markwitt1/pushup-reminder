@@ -8,4 +8,8 @@ setTimeout(function () {
 finishBtn.addEventListener("click", function () {
     electron_1.ipcRenderer.send("close-all");
 });
+var onOffSwitch = document.getElementById("myonoffswitch");
+onOffSwitch.addEventListener("change", function () {
+    electron_1.ipcRenderer.send("set-active", onOffSwitch.checked);
+});
 //# sourceMappingURL=renderer.js.map
