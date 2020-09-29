@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.scss";
+import { IpcRendererEvent } from "electron";
+import useSettings from "./hooks/useSettings";
+const { ipcRenderer } = window.require("electron");
 
-function App() {
+const App = () => {
+  const [pushupsNumber, setPushupsNumber] = useState<number | undefined>();
+  const [waiting, setWaiting] = useState(true);
+  const mySettings = useSettings();
+
+  useEffect(() => {
+    setPushupsNumber(mySettings?.pushupsNumber);
+
+    let timeout = setTimeout(() => setWaiting(false), pushupsNumber);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [mySettings, pushupsNumber]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>
+        Do <span>{pushupsNumber}</span> Pushups now
+      </h1>
+      <button
+        id="finish-btn"
+        disabled={waiting}
+        onClick={() => ipcRenderer.send("closePopup")}
+      >
+        Finish
+      </button>
     </div>
   );
-}
+};
 
 export default App;
